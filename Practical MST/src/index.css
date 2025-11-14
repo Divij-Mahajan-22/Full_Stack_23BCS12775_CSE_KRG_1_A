@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Minimal globals; Tailwind preflight handles resets */
+html, body, #root {
+  height: 100%;
+}

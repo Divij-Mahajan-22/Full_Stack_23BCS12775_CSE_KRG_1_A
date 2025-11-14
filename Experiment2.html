@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Experiment 3: Dynamic Product Filter</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px;">
+
+  <h2 style="text-align:center;">Dynamic Product Filter</h2>
+  
+  <label for="filter"><b>Select Category:</b></label>
+  <select id="filter">
+    <option value="all">All Products</option>
+    <option value="electronics">Electronics</option>
+    <option value="clothing">Clothing</option>
+  </select>
+
+  <div id="products-container" style="margin-top:20px;"></div>
+
+  <script>
+    // Dataset
+    const products = [
+      { name: "Laptop", category: "electronics", price: 59999 },
+      { name: "Shirt", category: "clothing", price: 999 },
+      { name: "Headphones", category: "electronics", price: 3499 },
+      { name: "Jeans", category: "clothing", price: 1499 },
+      { name: "Smartphone", category: "electronics", price: 20999 }
+    ];
+
+    // Initial render
+    renderProducts(products);
+
+    // Event listener for dropdown
+    document.getElementById('filter').addEventListener('change', (e) => {
+      const selected = e.target.value;
+      const filtered = selected === 'all' 
+        ? products 
+        : products.filter(p => p.category === selected);
+      renderProducts(filtered);
+    });
+
+    // Render function
+    function renderProducts(list) {
+      const container = document.getElementById('products-container');
+      if (list.length === 0) {
+        container.innerHTML = `<p><i>No products found.</i></p>`;
+      } else {
+        container.innerHTML = list.map(p => `
+          <div style="border:1px solid #ccc; padding:10px; margin:5px;">
+            <h3 style="margin:5px 0;">${p.name}</h3>
+            <p style="margin:0;">₹${p.price}</p>
+          </div>
+        `).join('');
+      }
+    }
+  </script>
+
+</body>
+</html>
