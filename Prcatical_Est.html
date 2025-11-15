@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Card - Premium Chair</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .product-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+    }
+    .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .product-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: linear-gradient(135deg, #ff6b6b, #ff8c42);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        z-index: 10;
+    }
+    .product-image-wrapper {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .product-card:hover img {
+        transform: scale(1.1);
+    }
+    .product-info {
+        padding: 25px;
+        text-align: center;
+    }
+    .product-category {
+        font-size: 12px;
+        color: #999;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+    .product-info h3 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+    .price-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    .price-original {
+        font-size: 14px;
+        color: #999;
+        text-decoration: line-through;
+    }
+    .price-current {
+        font-size: 28px;
+        font-weight: bold;
+        color: #667eea;
+    }
+    .discount-tag {
+        background: #fff3cd;
+        color: #ff9800;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .rating {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 12px;
+    }
+    .stars {
+        color: #ffc107;
+        font-size: 14px;
+    }
+    .rating-count {
+        font-size: 12px;
+        color: #999;
+    }
+    .description {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+    .buttons {
+        display: flex;
+        gap: 10px;
+    }
+    button {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+    }
+    .btn-primary:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(102,126,234,0.4);
+    }
+    .btn-secondary {
+        background: #f0f0f0;
+        color: #333;
+        border: 2px solid #667eea;
+    }
+    .btn-secondary:hover {
+        background: #667eea;
+        color: white;
+    }
+</style>
+</head>
+<body>
+    <div class="product-card">
+        <div class="product-badge">-33%</div>
+        <div class="product-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?w=400&h=300&fit=crop" alt="Ergonomic Chair">
+        </div>
+        <div class="product-info">
+            <p class="product-category">Furniture</p>
+            <h3>Ergonomic Office Chair</h3>
+            <div class="price-section">
+                <span class="price-original">$60.00</span>
+                <span class="price-current">$39.99</span>
+                <span class="discount-tag">Save $20</span>
+            </div>
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(245 reviews)</span>
+            </div>
+            <p class="description">Premium ergonomic chair with lumbar support and breathable mesh. Perfect for long work sessions.</p>
+            <div class="buttons">
+                <button class="btn-primary">Add to Cart</button>
+                <button class="btn-secondary">♥ Wishlist</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
